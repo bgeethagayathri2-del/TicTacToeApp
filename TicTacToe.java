@@ -1,41 +1,34 @@
+import java.util.Scanner;
+
+/**
+ * TicTacToe
+ * UC3 reads a slot number (1–9) entered by the user. This use case
+ * focuses only on input handling without validation.
+ */
 public class TicTacToe {
 
-    static char[][] board = new char[3][3];
-
     /**
-     * Entry point of the program. It initializes the board and prints
-     * the empty grid on the console.
+     * Entry point of the program. Reads slot input and prints it back
+     * to verify correct user input handling.
      */
     public static void main(String[] args) {
-        initializeBoard();
-        printBoard();
+
+        int slot = getUserSlot();
+        System.out.println("Slot entered: " + slot);
     }
 
     /**
-     * Initializes the 3x3 board by filling each cell with '-'
-     * to indicate an empty position.
+     * Reads an integer slot value from the user.
+     * Input: Scanner object
+     * Output: Slot number (1–9)
+     * Note: Validation will be added in later use cases.
      */
-    static void initializeBoard() {
-        for (int row = 0; row < 3; row++) {
-            for (int col = 0; col < 3; col++) {
-                board[row][col] = '-';
-            }
-        }
-    }
+    static int getUserSlot() {
+        Scanner scanner = new Scanner(System.in);
 
-    /**
-     * Prints the Tic-Tac-Toe board using horizontal and vertical separators
-     * so that the grid structure is clearly visible to the user.
-     */
-    static void printBoard() {
-        System.out.println("-------------");
-        for (int row = 0; row < 3; row++) {
-            System.out.print("| ");
-            for (int col = 0; col < 3; col++) {
-                System.out.print(board[row][col] + " | ");
-            }
-            System.out.println();
-            System.out.println("-------------");
-        }
+        System.out.print("Enter a slot number (1-9): ");
+        int slot = scanner.nextInt();
+
+        return slot;
     }
 }
