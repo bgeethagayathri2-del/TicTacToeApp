@@ -22,10 +22,7 @@ public class TicTacToe {
         System.out.println(isDraw());
     }
 
-    /**
-     * Traverses the board to check for any remaining empty cells.
-     * Output: true if draw, false otherwise.
-     */
+    
     static boolean isDraw() {
 
         for (int r = 0; r < 3; r++) {
